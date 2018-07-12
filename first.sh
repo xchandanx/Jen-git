@@ -7,3 +7,4 @@ echo " List of files in this dir"
 ls -ltr
 echo " Todays date is"
 date
+
