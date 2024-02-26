@@ -1,13 +1,18 @@
-node {
-    stage ('Get Code') {
-       //  git 'https://github.com/awsdevopsssp/Jen-git.git'
-       checkout scm
-    }
-    stage ('Run Script')
-    {
-        sh 'sh first.sh'
-    }
-    stage ('notify'){
-        sh 'echo "Script ran successfully" '
+pipeline{
+    agent any
+    stages{
+        stage("Get Code"){
+            steps{
+                checkout scm
+            }
+            stage("Run Script"){
+                steps{
+                    sh "sh first.sh"
+                }
+            }
+            stage("Notify"){
+                sh 'echo "Script Ran Successfully"'
+            }
+        }
     }
 }
