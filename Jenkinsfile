@@ -16,5 +16,10 @@ pipeline{
                     sh 'echo "Script Ran Successfully"'
             }
         }
+        stage("Complete"){
+                steps{
+                    echo "Job Completed"
+            }
+        }
     }
 }
