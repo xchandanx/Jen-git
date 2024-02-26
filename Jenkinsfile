@@ -5,13 +5,15 @@ pipeline{
             steps{
                 checkout scm
             }
+            }
             stage("Run Script"){
                 steps{
                     sh "sh first.sh"
                 }
             }
             stage("Notify"){
-                sh 'echo "Script Ran Successfully"'
+                steps{
+                    sh 'echo "Script Ran Successfully"'
             }
         }
     }
